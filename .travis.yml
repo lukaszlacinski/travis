@@ -31,9 +31,9 @@ addons:
 
 sudo: required
 
-#before_install:
-    #- sudo chmod u+x .travis/*.sh
-    #- "/bin/bash .travis/setup.sh"
+before_install:
+    - sudo chmod u+x .travis/*.sh
+    - "/bin/bash .travis/setup.sh"
     #- wget https://dabdceba-6d04-11e5-ba46-22000b92c6ec.e.globus.org/containers/public/e3sm.sif
     #- wget --no-check-certificate https://esgf.anl.gov/monitor/e3sm.sif
 
