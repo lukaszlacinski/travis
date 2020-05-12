@@ -40,3 +40,4 @@ sudo: required
 script:
     #- travis_wait 30 singularity exec --hostname singularity -B $HOME/projects e3sm.sif .travis/run.sh
     - travis_wait 30 ls -la
+
