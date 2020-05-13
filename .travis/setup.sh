@@ -1,12 +1,15 @@
 #!/bin/bash
 
+export PATH="${GOPATH}/bin:${PATH}"
 
-VERSION=3.5.3 && \
-    wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-${VERSION}.tar.gz && \
-    tar -xzf singularity-${VERSION}.tar.gz
+mkdir -p "${GOPATH}/src/github.com/sylabs"
+cd "${GOPATH}/src/github.com/sylabs"
+
+git clone https://github.com/sylabs/singularity
 cd singularity
-./mconfig
-make -C ./builddir
+git checkout tags/v3.4.2
+./mconfig -v -p /usr/local
+make -j `nproc 2>/dev/null || echo 1` -C ./builddir all
 sudo make -C ./builddir install
 
 echo "Singularity version"
