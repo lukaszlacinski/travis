@@ -9,6 +9,7 @@ ls -la /usr/local/
 echo 'export GOPATH=${HOME}/go' >> ~/.bashrc && \
     echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc && \
     source ~/.bashrc
+cat ~/.bashrc
 export
 
 export VERSION=3.5.3 && # adjust this as necessary \
