@@ -14,6 +14,10 @@ export VERSION=3.5.3 && # adjust this as necessary \
     tar -xzf singularity-${VERSION}.tar.gz && \
     cd singularity
 
+./mconfig && \
+    make -C ./builddir && \
+    sudo make -C ./builddir install
+
 exit 0
 
 export PATH="${GOPATH}/bin:${PATH}"
