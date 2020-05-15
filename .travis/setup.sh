@@ -7,11 +7,15 @@ export
 for p in $(xargs -n1 -d: <<< $PATH); do
     echo $p | grep '/go' > /dev/null
     if [ $? -ne 0 ]; then
-        TMPPATH=$p:$TMPPATH
+        TMPPATH="$p:$TMPPATH"
     fi
 done
-export PATH=$TMPPATH
+export PATH="$TMPPATH"
+unset GOPATH
+unset GOROOT
 echo $PATH
+echo $GOROOT
+echo $GOPATH
 
 export VERSION=1.13.5 OS=linux ARCH=amd64 && \
     wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz && \
@@ -19,7 +23,8 @@ export VERSION=1.13.5 OS=linux ARCH=amd64 && \
     rm go$VERSION.$OS-$ARCH.tar.gz
 ls -la /usr/local/go/bin
 
-export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
+export GOPATH="${HOME}/go"
+export PATH="/usr/local/go/bin:${PATH}:${GOPATH}/bin"
 go version
 export VERSION=3.5.3 && # adjust this as necessary \
     wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-${VERSION}.tar.gz && \
