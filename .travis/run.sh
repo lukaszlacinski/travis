@@ -1,7 +1,8 @@
 #!/bin/bash
 
 
-date 
+date
+ls -la
 exit 0
 
 cd cime/scripts
