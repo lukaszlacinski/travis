@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 date
 ls -la
 
