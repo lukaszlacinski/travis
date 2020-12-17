@@ -6,5 +6,6 @@ jobs:
       image: ubuntu-2004:202010-01
     steps:
       - run: ls -la ~
+      - run: ls -la ~/bin
       - run: pwd
     
