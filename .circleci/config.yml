@@ -5,6 +5,4 @@ jobs:
     machine:
       image: ubuntu-2004:202010-01
     steps:
-      - run: sudo apt update
-      - run: sudo apt install squashfs-tools
       - checkout
