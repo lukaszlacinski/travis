@@ -5,4 +5,4 @@ jobs:
     machine:
       image: ubuntu-2004:202010-01
     steps:
-      - run: echo "Hello world"
+      - run: ls -l
