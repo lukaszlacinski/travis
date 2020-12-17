@@ -6,7 +6,7 @@ jobs:
       image: ubuntu-2004:202010-01
     steps:
       - checkout
-      - run: ls -la ~
-      - run: ls -la
-      - run: pwd
+      - run: bash .circleci/setup.sh
+
+
 
