@@ -1,27 +1,16 @@
 #!/bin/bash
 
-# Remove the pre-installed Go 1.11 from the environment
 go version
-exit 0
-#for p in $(xargs -n1 -d: <<< $PATH); do
-#    echo $p | grep '/go' > /dev/null
-#    if [ $? -ne 0 ]; then
-#        TMPPATH="$p:$TMPPATH"
-#    fi
-#done
-#export PATH="$TMPPATH"
-#unset GOPATH
-#unset GOROOT
 
 # Install Go
-export VERSION=1.13.5 OS=linux ARCH=amd64 && \
-    wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz && \
-    sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz && \
-    rm go$VERSION.$OS-$ARCH.tar.gz
+#export VERSION=1.13.5 OS=linux ARCH=amd64 && \
+#    wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz && \
+#    sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz && \
+#    rm go$VERSION.$OS-$ARCH.tar.gz
 
-export GOPATH="${HOME}/go"
-export PATH="/usr/local/go/bin:${PATH}:${GOPATH}/bin"
-go version
+#export GOPATH="${HOME}/go"
+#export PATH="/usr/local/go/bin:${PATH}:${GOPATH}/bin"
+#go version
 
 # Install Singularity
 export VERSION=3.5.3 && # adjust this as necessary \
