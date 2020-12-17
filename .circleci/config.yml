@@ -6,3 +6,5 @@ jobs:
       image: ubuntu-2004:202010-01
     steps:
       - checkout
+      - run: cd E3SM/
+      - run: bash .circleci/setup.sh
