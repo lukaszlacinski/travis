@@ -5,4 +5,6 @@ jobs:
     machine:
       image: ubuntu-2004:202010-01
     steps:
-      - run: ls -l
+      - run: ls -la
+      - run: pwd
+    
